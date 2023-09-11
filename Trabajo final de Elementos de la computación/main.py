@@ -4,21 +4,44 @@ Created on Mon Sep 11 10:31:48 2023
 
 @author: glady
 """
-
-print("Vamos a modelizar la oferta y la demanda")
-Eleccion=float(input("Elige una opcion lineal/cuadrática: "))
 import funcionlinealoferta
 import Funcionlinealdemanda
 import Funcioncuadraticademanda
 import Funcioncuadraticaoferta
 
-if Eleccion=="lineal":
-    a=float(input("Ingrese un número para la pendiente de la función demanda: "))
-    b=float(input("Ingrese un número para la ordenada al origen de la función demanda: "))
-    fl1= Funcionlinealdemanda.pedir_fl1(a, b)
-elif Eleccion=="cuadratica":
-    a=float(input("Ingrese un número para el coeficiente cuadrático función demanda: "))
-    b=float(input("Ingrese un número para el coeficiente lineal de la función demanda: "))
-    c=float(input("Ingrese un número para el coeficiente independiente de la función demanda: "))
-    fl2=funcionlinealoferta.pedir_fl2(a, b)
-else: print("Elección inválida")
+def main():
+    print("Vamos a modelizar la oferta y la demanda")
+    Eleccion = input("Elige una opción:\n"
+                     "l para función lineal\n"
+                     "c para función cuadrática\n"
+                     ":......")
+
+    if Eleccion == "l":
+        a = float(input("Ingrese un número para la pendiente de la función demanda: "))
+        b = float(input("Ingrese un número para la ordenada al origen de la función demanda: "))
+        fl1 = Funcionlinealdemanda.pedir_fl1(a, b)
+        a = float(input("Ingrese un número para la pendiente de la función oferta: "))
+        b = float(input("Ingrese un número para la ordenada al origen de la función oferta: "))
+        fl2 = funcionlinealoferta.pedir_fl2(a, b)
+        return fl1, fl2
+    elif Eleccion == "c":
+        a = float(input("Ingrese un número para el coeficiente cuadrático función demanda: "))
+        b = float(input("Ingrese un número para el coeficiente lineal de la función demanda: "))
+        c = float(input("Ingrese un número para el coeficiente independiente de la función demanda: "))
+        fc1 = Funcioncuadraticaoferta.pedir_fc1(a, b, c)
+        a = float(input("Ingrese un número para la pendiente de la función demanda: "))
+        b = float(input("Ingrese un número para la ordenada al origen de la función demanda: "))
+        c = float(input("Ingrese un número para la pendiente de la función demanda: "))
+        fc2 = Funcioncuadraticademanda.pedir_fc2(a, b, c)
+        return fc1, fc2
+    else:
+        print("Elección inválida")
+        return None
+
+if __name__ == "__main__":
+    result = main()
+    print(result)
+
+
+
+
