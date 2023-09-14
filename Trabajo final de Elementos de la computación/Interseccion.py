@@ -6,10 +6,10 @@ Created on Wed Sep 13 19:27:06 2023
 """
 import main
 
-def interseccion():
+def precio_equilibrio():
     """
     INPUT none
-    OUTPUT Interseccion entre funciones
+    OUTPUT precio de equilibrio de las funciones oferta y demanda ingresadas.
     type data float
         
     Interseccion: fl1 = fl2 or fc1=FC2

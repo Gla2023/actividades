@@ -9,17 +9,21 @@ import numpy as np
 a=0
 b=0
 c=0
-def pedir_fc2(a, b, c):
+def pedir_fc2():
     """
     INPUT none
-    OUTPUT Función demanda
-    type data float
+    OUTPUT quadratic function offer
+    type data: array
         
-    Función lineal: f(x) = ax + b
+    Función cuadrática: f(x) = axx + bx+c
+    x=cantidad de producto
+    f(x)= precio
     """
-    x = np.arange(1, 101) 
-
-    
-    fc2= a * x* x + b*x + c 
+    a = float(input("Ingrese un número para el coeficiente cuadrático función oferta: "))
+    b = float(input("Ingrese un número para el coeficiente lineal de la función oferta: "))
+    c = float(input("Ingrese un número para el coeficiente independiente de la función oferta: "))
+    cantidad_producto = np.arange(1, 101)
+ 
+    fc2= a * cantidad_producto* cantidad_producto + b*cantidad_producto + c 
             
-    return fc2
+    return cantidad_producto, fc2
