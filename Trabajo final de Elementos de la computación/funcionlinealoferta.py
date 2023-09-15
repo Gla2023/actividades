@@ -26,3 +26,5 @@ def pedir_fl2():
     fl2= a * cantidad_producto+b 
             
     return cantidad_producto, fl2
+
+print (pedir_fl2())
