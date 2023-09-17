@@ -27,4 +27,3 @@ def pedir_fl2():
             
     return cantidad_producto, fl2
 
-print (pedir_fl2())

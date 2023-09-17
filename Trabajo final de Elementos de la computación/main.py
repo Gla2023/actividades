@@ -8,6 +8,10 @@ import funcionlinealoferta
 import Funcionlinealdemanda
 import Funcioncuadraticademanda
 import Funcioncuadraticaoferta
+import Excesodedemanda                                                                                                                                                                                                                                                                                                                                                                                                                         
+import Excesooferta
+import Graficofertademanda2
+import Graficoofertademanda
 
 def main():
     print("Vamos a modelizar la oferta y la demanda")
@@ -18,17 +22,17 @@ def main():
 
     if Eleccion == "l":
         
-        fl1 = Funcionlinealdemanda.pedir_fl1(a, b)
-        a = float(input("Ingrese un número para la pendiente de la función oferta: "))
-        b = float(input("Ingrese un número para la ordenada al origen de la función oferta: "))
-        fl2 = funcionlinealoferta.pedir_fl2(a, b)
-        return fl1, fl2
+        fl1 = Funcionlinealdemanda.pedir_fl1()
+        fl2 = funcionlinealoferta.pedir_fl2()
+        
+        
+        return fl1, fl2, Graficoofertademanda
     elif Eleccion == "c":
-       )
-        fc1 = Funcioncuadraticaoferta.pedir_fc1(a, b, c)
        
-        fc2 = Funcioncuadraticademanda.pedir_fc2(a, b, c)
-        return fc1, fc2
+        fc1 = Funcioncuadraticaoferta.pedir_fc1()
+       
+        fc2 = Funcioncuadraticademanda.pedir_fc2()
+        return fc1, fc2, Graficofertademanda2
     else:
         print("Elección inválida")
         return None
