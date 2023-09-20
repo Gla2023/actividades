@@ -15,8 +15,8 @@ def graficar_oferta_demanda():
     type graph
         
     """
-    cantidad_producto, fl2 = funcionlinealoferta.pedir_fl2()
-    cantidad_producto, fl1 = Funcionlinealdemanda.pedir_fl1()
+    cantidad_producto, fl2 = funcionlinealoferta.oferta()
+    cantidad_producto, fl1 = Funcionlinealdemanda.demanda()
 
     # Graficar la función de oferta
     plt.plot(cantidad_producto, fl2, label="Oferta")
