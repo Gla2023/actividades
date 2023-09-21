@@ -13,12 +13,12 @@ def h():
     punto_equilibrio = Preciodeequilibrio.precio_equilibrio().punto_equilibrio
     x_equilibrio = punto_equilibrio[0]
     f_x = punto_equilibrio[1]
-    g_x = funcionlinealoferta.oferta(x)  # Reemplaza con la función de oferta correcta
+    g_x = Preciodeequilibrio.Funcionlinealdemanda  # Reemplaza con la función de oferta correcta
     return f_x - g_x 
 
-integral_result, error = quad(h, 0, x_equilibrio)
+    integral_result, error = quad(h, 0, x_equilibrio)
 
-print("El valor de la integral de h(x)", integral_result)
+    print("El valor de la integral de h(x)", integral_result)
 
  
   
