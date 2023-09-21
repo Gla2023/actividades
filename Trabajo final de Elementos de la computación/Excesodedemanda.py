@@ -4,26 +4,21 @@ Created on Sat Sep 16 10:07:52 2023
 
 @author: glady
 """
-
-def exceso_demanda():
-    """ 
-    input 
-    output
-    type 
-    """
-import numpy as np
+import Preciodeequilibrio
 from scipy.integrate import quad
+def h():
+    """ 
+    Dieferencia entre las funciones a integrar.
+    """
+    punto_equilibrio = Preciodeequilibrio.precio_equilibrio().punto_equilibrio
+    x_equilibrio = punto_equilibrio[0]
+    f_x = punto_equilibrio[1]
+    g_x = funcionlinealoferta.oferta(x)  # Reemplaza con la función de oferta correcta
+    return f_x - g_x 
 
-# Punto de equilibrio (supongamos que es x = 3)
-x_equilibrio = 3
-y_equilibrio = f(x_equilibrio) - g(x_equilibrio)
+integral_result, error = quad(h, 0, x_equilibrio)
 
-# Definir la función de diferencia h(x) = f(x) - g(x)
-def h(x):
-    return f(x) - g(x)
+print("El valor de la integral de h(x)", integral_result)
 
-# Calcular la integral de h(x) en un intervalo [a, x_equilibrio]
-a = 0  # Puedes cambiar el límite inferior según tus necesidades
-integral_result, error = quad(h, a, x_equilibrio)
-
-print("El valor de la integral de h(x) en el i")
+ 
+  

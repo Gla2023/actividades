@@ -4,6 +4,8 @@ Created on Wed Sep 20 16:33:41 2023
 
 @author: glady
 """
+import Funcioncuadraticaoferta
+import Funcioncuadraticademanda
 
 def precio_equilibrio():
     """
@@ -13,20 +15,19 @@ def precio_equilibrio():
         
     Interseccion: fc1=FC2
     """
-    import Funcioncuadraticaoferta
-    import Funcioncuadraticademanda
-    import Graficoofertademanda2
     cantidad_producto, fc2 = Funcioncuadraticaoferta.pedir_fc2()
     cantidad_producto, fc1 = Funcioncuadraticademanda.pedir_fc1()
 
-    for cantidad_producto in fc1:
-        if cantidad_producto in fc2:
-            equilibrio_producto= [cantidad_producto]
-            equilibrio_precio=fc1[equilibrio_producto]
-            print(f"La interseccion entre las funciones es:{equilibrio_producto}, {equilibrio_precio}")
-        decision=input("Quiere ver el grafico ingrese Y or N")
-        if decision=="Y":
-            Graficoofertademanda2()   
-        else:
-            print("Gracias por usar la aplicacion")  
-    
+    for i in range(len(cantidad_producto)):
+        if fc2[i] == fc1[i]:           
+            equilibrio_producto= (cantidad_producto[i], fc1[i])
+            print(f"La interseccion entre las funciones es:{equilibrio_producto}")
+        # decision=input("Quiere ver el grafico ingrese Y or N")
+        # if decision=="Y":
+        #     Graficoofertademanda2()   
+        # else:
+          
+          
+                   
+               
+          
